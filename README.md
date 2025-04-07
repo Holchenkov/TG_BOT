@@ -4,7 +4,7 @@
 
 ![Knight](https://github.com/Holchenkov/TG_BOT/blob/main/Photo/%D0%9E%D0%B4%D0%B8%D0%BD.jpg?raw=true)
 
-Бот был разработан с использованием Python и библиотеки telebot и time.
+Бот был разработан с использованием Python и библиотек: telebot,time,Json и os.
 
 Разработчики The Legend on the Knight - Хольченков Алексей и Шатаев Евгений.
 
