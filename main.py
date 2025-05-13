@@ -3,7 +3,7 @@ import time
 import json
 import os
 
-TOKEN = ''
+TOKEN = '7831736198:AAFcQyj3MDnPPk1lNNLFJcV328w69INEIU8'
 bot = TeleBot(TOKEN)
 
 def load_progress():
@@ -12,12 +12,12 @@ def load_progress():
             return json.load(f)
     return {}
 
-def save_progress():
+def save_progress(): 
     with open(SAVE_FILE, 'w', encoding='utf-8') as f:
         json.dump(user_state, f, ensure_ascii=False, indent=4)
 
 SAVE_FILE = "save_data.json"
-
+ 
 user_state = load_progress()
 
 @bot.message_handler(commands=['start']) 
@@ -132,12 +132,12 @@ def handle_choice(message):
             bot.send_message(message.chat.id, "Убежать от бандитов?", reply_markup=markup)
         elif message.text == "Нет": 
             user_state[message.chat.id] = "game_over"
-            save_progress() 
+            save_progress()  
             markup = types.ReplyKeyboardMarkup(resize_keyboard=True) 
             button1 = types.KeyboardButton("Начать заново")
             button2 = types.KeyboardButton("Завершить игру")
             markup.add(button1, button2)
-            bot.send_message(message.chat.id, "- Король: Ты отказываешь королю? Стража! Снесите ему голову с плеч. \nВас казнили за высокомерие по отношению к королю.", reply_markup=types.ReplyKeyboardRemove)
+            bot.send_message(message.chat.id, "- Король: Ты отказываешь королю? Стража! Снесите ему голову с плеч. \nВас казнили за высокомерие по отношению к королю.", reply_markup=types.ReplyKeyboardRemove()) 
             photo_url = "https://github.com/Holchenkov/TG_BOT/blob/main/Photo/%D0%94%D0%B5%D1%84%D0%BE%D0%BB%D1%82%20%D1%81%D0%BC%D0%B5%D1%80%D1%82%D1%8C.png?raw=true"
             bot.send_photo(message.chat.id, photo_url)
             time.sleep(5)
@@ -166,7 +166,7 @@ def handle_choice(message):
             photo_url = "https://github.com/Holchenkov/TG_BOT/blob/main/Photo/%D0%A3%D0%B1%D0%B5%D0%B3%D0%B0%D0%B5%D1%82%D0%B5.png?raw=true"
             bot.send_photo(message.chat.id, photo_url)
             time.sleep(9)
-            bot.send_message(message.chat.id, "- Оруженосец: Фууух! Еле оторвались от них… \n- Вы: Да. Ну что, сделаем привал? А то мы уже 3 дня без остановки идём! \nНаши герои развели костер и собрали палатки. \n- Вы: А ведь знаешь, оруженосец, я тоже боялся во время своего первого путешествия, но мой наставник, с которым я путешествовал огромное количество времени поведал мне тайну, как перестать трусить. - Оруженосец: Спасибо за наставления. Я не подведу вас и стану рыцарем! Так что вам помогло перестать боятся? \n- Вы: Так это же очевидно! Алкоголь!!! \n- Оруженосец: Вы уверенны, что это тот совет, который мне сейчас нужен? Я много слышал о вреде алкоголя внутри стен замка. \n- Вы: Не неси чушь, пару кружек для храбрости ещё никому не помешали! Завтра утром пойдем в таверну, чтобы ты перестал бояться! Тут как раз близко есть таверна. \nНочь прошла. Наши путешественники выдвинулись в сторону таверны. \n- Вы: Ну что, оруженосец, ты готов? \n- Оруженосец: Да, я готов. Надеюсь мне поможет этот совет, и я перестану бояться в бою.")        
+            bot.send_message(message.chat.id, "- Оруженосец: Фууух! Еле оторвались от них… \n- Вы: Да. Ну что, сделаем привал? А то мы уже 3 дня без остановки идём! \nНаши герои развели костер и собрали палатки. \n- Вы: А ведь знаешь, оруженосец, я тоже боялся во время своего первого путешествия, но мой наставник, с которым я путешествовал огромное количество времени поведал мне тайну, как перестать трусить. \n- Оруженосец: Спасибо за наставления. Я не подведу вас и стану рыцарем! Так что вам помогло перестать боятся? \n- Вы: Так это же очевидно! Алкоголь!!! \n- Оруженосец: Вы уверенны, что это тот совет, который мне сейчас нужен? Я много слышал о вреде алкоголя внутри стен замка. \n- Вы: Не неси чушь, пару кружек для храбрости ещё никому не помешали! Завтра утром пойдем в таверну, чтобы ты перестал бояться! Тут как раз близко есть таверна. \nНочь прошла. Наши путешественники выдвинулись в сторону таверны. \n- Вы: Ну что, оруженосец, ты готов? \n- Оруженосец: Да, я готов. Надеюсь мне поможет этот совет, и я перестану бояться в бою.")        
             time.sleep(43)
             caption = "Привал в лесу" 
             photo_url = "https://github.com/Holchenkov/TG_BOT/blob/main/Photo/%D0%9F%D1%80%D0%B8%D0%B2%D0%B0%D0%BB%20%D0%B2%20%D0%BB%D0%B5%D1%81%D1%83.jpg?raw=true"
