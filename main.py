@@ -3,7 +3,7 @@ import time
 import json
 import os
 
-TOKEN = '7831736198:AAFcQyj3MDnPPk1lNNLFJcV328w69INEIU8'
+TOKEN = ''
 bot = TeleBot(TOKEN)
 
 def load_progress():
